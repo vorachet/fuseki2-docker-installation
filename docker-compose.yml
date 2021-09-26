@@ -1,0 +1,18 @@
+# Modified by Vorachet 
+
+version: '3.0'
+services:
+  fuseki:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fuseki
+    ports:
+      - "3030:3030"
+      - "3043:3043"
+    volumes:
+      - ./logs:/fuseki/logs
+      - ./public:/fuseki/public
+      - ./security:/fuseki/security
+      - ./readonly:/fuseki/readonly
+      - ./databases:/fuseki/databases
